@@ -1,5 +1,3 @@
-import re
-
 def parseData(data):
     goodStocks = []
     toSell = []
