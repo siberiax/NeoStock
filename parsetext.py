@@ -1,5 +1,3 @@
-import re
-
 def parseData(data):
     goodStocks = []
     toSell = []
@@ -26,16 +24,16 @@ def parseData(data):
                 toSell.append(fields[0])
     if (len(goodStocks) == 0):
         print ("Nothing to buy right now")
-    if (len(goodStocks) == 1):
-        print ("Buy: " + goodStocks[1])
     parseData2(data, goodStocks, toSell)
 
 def parseData2(data, goodStocks, toSell):
     bestValue = 999
+    haveStock = True
     bestStock = ""
     for stock in goodStocks:
         firstSplit = stock + "\">"
         if (firstSplit not in data):
+            haveStock = False
             bestStock = stock
             break
         whatwewant1 = data.split(firstSplit)
@@ -48,7 +46,10 @@ def parseData2(data, goodStocks, toSell):
         if (stockVal < bestValue):
             bestValue = stockVal
             bestStock = stock
-    print ("Buy: " + bestStock)
+    buyStock = "Buy: " + bestStock
+    if (not haveStock):
+        buyStock += "... You don't own any of it"
+    print (buyStock)
     sellIt = []
     for stock in toSell:
         ownIt = stock + "\">"
