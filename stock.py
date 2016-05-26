@@ -1,5 +1,4 @@
 import mechanize
-import urllib2
 import parsetext
 
 longstring = ""
