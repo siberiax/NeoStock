@@ -11,8 +11,8 @@ br.addheaders = [('User-agent', 'Chrome')]
 
 url = "http://www.neopets.com/stockmarket.phtml?type=portfolio"
 
-user = '***REMOVED***'
-passwd = '***REMOVED***'
+user = 'xxxxxxxxxx'
+passwd = 'xxxxxxxxxxx'
 
 response = br.open(url)
 
