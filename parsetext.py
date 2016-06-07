@@ -24,7 +24,8 @@ def parseData(data):
                 toSell.append(fields[0])
     if (len(goodStocks) == 0):
         print ("Nothing to buy right now")
-    parseData2(data, goodStocks, toSell)
+    else:
+        parseData2(data, goodStocks, toSell)
 
 def parseData2(data, goodStocks, toSell):
     bestValue = 999
